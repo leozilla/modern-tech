@@ -6,7 +6,14 @@ node {
 
   checkout scm
 
-  stage 'Build image'
   sh("cd test-service-a-impl")
-  sh("mvn install")
+
+  stage 'Compile'
+  sh("mvn compile")
+
+  stage 'Test'
+  sh("mvn test")
+
+  stage 'Build image'
+  sh("mvn dockerfile:build")
 }
