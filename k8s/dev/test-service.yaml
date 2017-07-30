@@ -18,10 +18,10 @@ spec:
         volumeMounts:
         - name: config-volume
           mountPath: /usr/share/test-service-a
-        volumes:
-        - name: config-volume
-          configMap:
-            name: test-service-a-app-properties
+      volumes:
+      - name: config-volume
+        configMap:
+          name: test-service-a-app-properties
 
 ---
 
