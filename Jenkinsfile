@@ -15,8 +15,8 @@ node {
   sh("mvn test")
 
   stage 'Build+Push image'
-  sh("cd ..")
-  sh('mvn dockerfile:build dockerfile:push')
+  sh("pwd")
+  sh("mvn dockerfile:build dockerfile:push")
 
   stage 'Deploy'
   sh("kubectl --namespace=develop apply -f k8s/dev")
