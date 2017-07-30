@@ -23,5 +23,5 @@ node {
   stage 'Deploy'
   sh("sed -i.bak 's#localhost:5000/test-service-a#${imageTag}#' ./k8s/dev/*.yaml")
   // sh("kubectl --namespace=develop apply -f k8s/dev/volume.yaml")
-  sh("kubectl --namespace=develop apply -f k8s/services/")
+  sh("kubectl --namespace=develop apply -f k8s/services/service.yaml")
 }
