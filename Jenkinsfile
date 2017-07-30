@@ -6,8 +6,6 @@ node {
 
   checkout scm
 
-  sh("cd test-service-a-impl")
-
   stage 'Compile'
   sh("mvn compile")
 
@@ -15,7 +13,7 @@ node {
   sh("mvn test")
 
   stage 'Build+Push image'
-  sh("pwd")
+  sh("cd test-service-a-impl")
   sh("mvn dockerfile:build dockerfile:push")
 
   stage 'Deploy'
