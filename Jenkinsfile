@@ -13,7 +13,9 @@ node {
   sh("mvn test")
 
   stage 'Build+Push image'
+  sh("pwd")
   sh("cd test-service-a-impl")
+  sh("pwd")
   sh("mvn dockerfile:build dockerfile:push")
 
   stage 'Deploy'
