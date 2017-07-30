@@ -52,7 +52,7 @@ public class IndexControllerIntegrationTest {
 
    @After
    public void after() {
-      MYSQLD.reloadSchema("integration_test");
+      MYSQLD.reloadSchema("integration_test", classPathScript("db/integration_test_setup.sql"));
    }
 
    @AfterClass

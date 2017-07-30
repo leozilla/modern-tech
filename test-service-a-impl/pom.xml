@@ -90,7 +90,8 @@
                             <goal>build</goal>
                         </goals>
                         <configuration>
-                            <repository>localhost:5000</repository>
+                            <repository>localhost:5000/test-service-a</repository>
+                            <tag>${project.version}</tag>
                         </configuration>
                     </execution>
                 </executions>
