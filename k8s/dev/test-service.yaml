@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: test-service-a
-        image: localhost:5000/test-service-a:1.0-SNAPSHOT
+        image: localhost:5000/test-service-a
         ports:
         - containerPort: 8080
 
