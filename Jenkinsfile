@@ -11,11 +11,8 @@ node {
 
   checkout scm
 
-  stage 'Compile'
-  sh("mvn compile")
-
-  stage 'Test'
-  sh("mvn install")
+  stage 'Clean Install'
+  sh("mvn clean install")
 
   stage 'Build+Push image'
   sh("cd test-service-a-impl && mvn dockerfile:build dockerfile:push -Ddockerfile.repository=${imageName} -Ddockerfile.tag=${imageTag}")
