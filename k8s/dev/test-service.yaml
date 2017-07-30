@@ -1,13 +1,14 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: test-service-a-deployment
+  name: test-service-a-dev
 spec:
   replicas: 1
   template:
     metadata:
       labels:
         app: test-service-a
+        role: backend
     spec:
       containers:
       - name: test-service-a

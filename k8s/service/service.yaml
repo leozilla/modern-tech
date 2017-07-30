@@ -1,11 +1,14 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: test-service-a-service
+  name: test-service-a
 spec:
+  type: NodePort # when run with minikube
   selector:
     app: test-service-a
+    role: backend
   ports:
-    - protocol: TCP
+    - name: http
+      protocol: TCP
       port: 8080
       targetPort: 8080
