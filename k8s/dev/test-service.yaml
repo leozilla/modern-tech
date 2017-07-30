@@ -17,7 +17,7 @@ spec:
         - containerPort: 8080
         volumeMounts:
         - name: config-volume
-          mountPath: /usr/share/test-service-a
+          mountPath: /usr/share/test-service-a/config
       volumes:
       - name: config-volume
         configMap:
