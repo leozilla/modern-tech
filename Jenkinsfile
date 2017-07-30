@@ -12,7 +12,6 @@ node {
   checkout scm
 
   stage 'Compile'
-  sh("kubectl version")
   sh("mvn compile")
 
   stage 'Test'
@@ -23,7 +22,6 @@ node {
 
   stage 'Deploy'
   sh("sed -i.bak 's#localhost:5000/test-service-a#${imageTag}#' ./k8s/dev/*.yaml")
-  sh("kubectl version")
-  // sh("kubectl --namespace=develop apply -f k8s/dev/volume.yaml")
-  sh("kubectl --namespace=develop apply -f k8s/services/service.yaml")
+  sh("kubectl --namespace=develop apply -f k8s/dev")
+  sh("kubectl --namespace=develop apply -f k8s/services")
 }
