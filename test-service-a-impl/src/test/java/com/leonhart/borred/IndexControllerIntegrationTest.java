@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.leonhart.borred.dto.CreateUserRequest;
 import com.wix.mysql.EmbeddedMysql;
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
@@ -45,8 +46,13 @@ public class IndexControllerIntegrationTest {
    private TestRestTemplate template;
 
    @Before
-   public void setUp() throws Exception {
+   public void before() throws Exception {
       this.base = new URL("http://localhost:" + port + "/");
+   }
+
+   @After
+   public void after() {
+      MYSQLD.reloadSchema("integration_test");
    }
 
    @AfterClass
