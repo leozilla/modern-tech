@@ -1,8 +1,6 @@
 node {
   def project = 'test-service-a'
   def appName = 'test-service-a'
-  def feSvcName = "${appName}-frontend"
-  // def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
 
   checkout scm
 
@@ -13,7 +11,7 @@ node {
   sh("mvn test")
 
   stage 'Build+Push image'
-  sh("cd test-service-a-impl && mvn dockerfile:build dockerfile:push")
+  sh("cd test-service-a-impl && mvn dockerfile:build dockerfile:push -Ddockerfile.repository=localhost:5000/${project}")
 
   stage 'Deploy'
   sh("kubectl --namespace=develop apply -f k8s/dev")
