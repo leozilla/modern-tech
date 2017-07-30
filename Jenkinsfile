@@ -2,7 +2,7 @@ node {
   def project = 'test-service-a'
   def appName = 'test-service-a'
   def dockerRegistry = 'localhost:5000'
-  def imageTag = ${dockerRegistry}/${project}:${env.BUILD_NUMBER}
+  def imageTag = "${dockerRegistry}/${project}:${env.BUILD_NUMBER}"
 
   checkout scm
 
