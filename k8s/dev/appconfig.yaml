@@ -1,0 +1,11 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: test-service-a-app-properties
+data:
+  application.properties: |
+    spring.jpa.hibernate.ddl-auto=create
+    spring.jpa.database-platform=org.hibernate.dialect.MySQL5Dialect
+    spring.datasource.url=jdbc:mysql://mysql/integration_test
+    spring.datasource.username=root
+    spring.datasource.password=

@@ -15,6 +15,13 @@ spec:
         image: localhost:5000/test-service-a
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - name: config-volume
+          mountPath: /usr/share/test-service-a
+        volumes:
+        - name: config-volume
+          configMap:
+            name: test-service-a-app-properties
 
 ---
 
