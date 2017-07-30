@@ -15,5 +15,5 @@ node {
   sh("mvn test")
 
   stage 'Build image'
-  sh("mvn dockerfile:build")
+  sh("mvn install")
 }
