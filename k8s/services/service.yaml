@@ -22,9 +22,8 @@ metadata:
 spec:
   selector:
     app: mysql
-    role: db
   ports:
     - name: mysql
       protocol: TCP
       port: 3306
-      targetPort: 3306
+  clusterIP: None
