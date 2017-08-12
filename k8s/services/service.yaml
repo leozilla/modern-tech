@@ -8,10 +8,15 @@ spec:
     app: test-service-a
     role: backend
   ports:
-    - name: http
+    - name: http-spring
       protocol: TCP
       port: 8080
       targetPort: 8080
+    - name: http-vertx
+      protocol: TCP
+      port: 8081
+      targetPort: 8081
+
 
 ---
 

@@ -16,6 +16,7 @@
     <properties>
         <java.version>1.8</java.version>
         <docker.client.version>8.8.2</docker.client.version>
+        <vertx.version>3.4.2</vertx.version>
     </properties>
 
     <parent>
@@ -32,6 +33,21 @@
             <version>${docker.client.version}</version>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-core</artifactId>
+                <version>${vertx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-rx-java</artifactId>
+                <version>${vertx.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>

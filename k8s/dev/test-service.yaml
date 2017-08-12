@@ -15,6 +15,9 @@ spec:
         image: localhost:5000/test-service-a
         ports:
         - containerPort: 8080
+          name: HTTP-Spring
+        - containerPort: 8081
+          name: HTTP-VertX
         volumeMounts:
         - name: config-volume
           mountPath: /usr/share/test-service-a/config
