@@ -17,6 +17,7 @@
         <java.version>1.8</java.version>
         <docker.client.version>8.8.2</docker.client.version>
         <vertx.version>3.4.2</vertx.version>
+        <grpc.version>1.5.0</grpc.version>
     </properties>
 
     <parent>
@@ -45,6 +46,21 @@
                 <groupId>io.vertx</groupId>
                 <artifactId>vertx-rx-java</artifactId>
                 <version>${vertx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-netty</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-protobuf</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-stub</artifactId>
+                <version>${grpc.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -96,5 +112,12 @@
                 </executions>
             </plugin>
         </plugins>
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.4.0.Final</version>
+            </extension>
+        </extensions>
     </build>
 </project>
