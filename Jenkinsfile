@@ -4,12 +4,12 @@ node {
   def dockerRegistry = 'localhost:5000'
   def imageName = "${dockerRegistry}/${project}"
 
+  checkout scm
+
   pom = readMavenPom file: 'pom.xml'
   def projectVersion = pom.version
 
   def imageTag = "${projectVersion}.${env.BUILD_NUMBER}"
-
-  checkout scm
 
   stage 'Clean Install'
   sh("mvn clean install")
