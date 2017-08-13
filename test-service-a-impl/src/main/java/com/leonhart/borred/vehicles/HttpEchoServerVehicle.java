@@ -6,7 +6,7 @@ import io.vertx.rxjava.core.http.HttpServerResponse;
 
 import static io.vertx.core.Vertx.vertx;
 
-public class HttpServerVehicle extends AbstractVerticle {
+public class HttpEchoServerVehicle extends AbstractVerticle {
 
    @Override
    public void start() throws Exception {
